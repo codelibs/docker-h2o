@@ -4,7 +4,7 @@ LABEL maintainer "CodeLibs, Inc."
 
 ENV H2O_HOME /opt/h2o
 COPY start-h2o-docker.sh /opt/h2o/bin/start-h2o-docker.sh
-RUN curl http://h2o-release.s3.amazonaws.com/h2o/rel-yu/3/h2o-3.28.0.3.zip \
+RUN curl http://h2o-release.s3.amazonaws.com/h2o/rel-yu/4/h2o-3.28.0.4.zip \
     -o /opt/h2o.zip && \
     cd /opt && \
     jar xvf /opt/h2o.zip && \
