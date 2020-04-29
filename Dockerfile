@@ -21,6 +21,7 @@ RUN apt update && \
     apt-get clean && rm -rf /var/cache/apt/*
 
 ARG GIT_BRANCH=master
+ARG BUILD_NUMBER=0
 
 RUN git clone https://github.com/h2oai/h2o-3.git -b $GIT_BRANCH && \
     rm /usr/bin/python && ln -s /usr/bin/python3 /usr/bin/python && \
@@ -31,6 +32,7 @@ RUN git clone https://github.com/h2oai/h2o-3.git -b $GIT_BRANCH && \
 USER docker
 
 RUN cd h2o-3 && \
+    echo "BUILD_NUMBER=$BUILD_NUMBER" > gradle/buildnumber.properties && \
     ./gradlew build -x test
 
 FROM adoptopenjdk:8-jdk-hotspot
