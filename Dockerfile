@@ -31,7 +31,9 @@ RUN git clone https://github.com/h2oai/h2o-3.git -b $GIT_BRANCH && \
 
 USER docker
 
+ADD h2o.patch .
 RUN cd h2o-3 && \
+    git apply ../h2o.patch && \
     echo "BUILD_NUMBER=$BUILD_NUMBER" > gradle/buildnumber.properties && \
     ./gradlew build -x test
 
