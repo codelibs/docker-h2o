@@ -1,5 +1,5 @@
 diff --git a/h2o-core/build.gradle b/h2o-core/build.gradle
-index cf1127c5c1..afd78d12f2 100644
+index 6f1759be65..ad1c746197 100644
 --- a/h2o-core/build.gradle
 +++ b/h2o-core/build.gradle
 @@ -39,6 +39,8 @@ dependencies {
@@ -8,9 +8,9 @@ index cf1127c5c1..afd78d12f2 100644
  
 +  compile 'org.codelibs:curl4j:1.2.4'
 +
-   testCompile "com.google.guava:guava:16.0.1"
-   testCompile "junit:junit:${junitVersion}"
-   testCompile "org.mockito:mockito-core:2.18.0"
+   testCompile project(':h2o-test-support')
+   testRuntimeOnly project(":${defaultWebserverModule}")
+   testCompileOnly "javax.servlet:javax.servlet-api:3.0.1"
 diff --git a/h2o-core/src/main/java/hex/ElasticsearchTokenizer.java b/h2o-core/src/main/java/hex/ElasticsearchTokenizer.java
 new file mode 100644
 index 0000000000..5e25a77285

@@ -5,7 +5,7 @@ See [https://hub.docker.com/r/codelibs/h2o/](https://hub.docker.com/r/codelibs/h
 
 ## Docker Images
 
--   [`3.30.0.7`](https://github.com/codelibs/docker-h2o/blob/master/Dockerfile)
+-   [`3.30.1.1`](https://github.com/codelibs/docker-h2o/blob/master/Dockerfile)
 
 ## Getting Started
 
@@ -26,6 +26,6 @@ $ docker build --rm -t codelibs/h2o:snapshot .
 To build it on release tag,
 
 ```console
-$ docker build --rm -t codelibs/h2o:3.30.0.7 --build-arg GIT_BRANCH=jenkins-3.30.0.7 --build-arg BUILD_NUMBER=7 .
+$ docker build --rm -t codelibs/h2o:3.30.1.1 --build-arg GIT_BRANCH=jenkins-3.30.1.1 --build-arg BUILD_NUMBER=1 .
 ```
 
