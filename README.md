@@ -5,14 +5,14 @@ See [https://hub.docker.com/r/codelibs/h2o/](https://hub.docker.com/r/codelibs/h
 
 ## Docker Images
 
--   [`3.30.1.1`](https://github.com/codelibs/docker-h2o/blob/master/Dockerfile)
+-   [`3.30.1.2`](https://github.com/codelibs/docker-h2o/blob/master/Dockerfile)
 
 ## Getting Started
 
 You can access http://localhost:54321 from the host OS with:
 
 ```console
-$ docker run -it -p 54321:54321 codelibs/h2o:snapshot
+$ docker run -it -p 54321:54321 ghcr.io/codelibs/h2o:snapshot
 ```
 
 ## Build
@@ -20,12 +20,12 @@ $ docker run -it -p 54321:54321 codelibs/h2o:snapshot
 To build docker images, run as below:
 
 ```console
-$ docker build --rm -t codelibs/h2o:snapshot .
+$ docker build --rm -t ghcr.io/codelibs/h2o:snapshot .
 ```
 
 To build it on release tag,
 
 ```console
-$ docker build --rm -t codelibs/h2o:3.30.1.1 --build-arg GIT_BRANCH=jenkins-3.30.1.1 --build-arg BUILD_NUMBER=1 .
+$ docker build --rm -t ghcr.io/codelibs/h2o:3.30.1.2 --build-arg GIT_BRANCH=jenkins-3.30.1.2 --build-arg BUILD_NUMBER=2 .
 ```
 
