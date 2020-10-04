@@ -1,7 +1,7 @@
 Docker for H2O
 =====
 
-See [https://hub.docker.com/r/codelibs/h2o/](https://hub.docker.com/r/codelibs/h2o/).
+See [Packages](https://github.com/orgs/codelibs/packages/container/package/h2o).
 
 ## Docker Images
 
