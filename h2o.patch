@@ -1,5 +1,5 @@
 diff --git a/h2o-core/build.gradle b/h2o-core/build.gradle
-index 6f1759be65..ad1c746197 100644
+index be8c986de5..c651d6cf43 100644
 --- a/h2o-core/build.gradle
 +++ b/h2o-core/build.gradle
 @@ -39,6 +39,8 @@ dependencies {
@@ -10,7 +10,7 @@ index 6f1759be65..ad1c746197 100644
 +
    testCompile project(':h2o-test-support')
    testRuntimeOnly project(":${defaultWebserverModule}")
-   testCompileOnly "javax.servlet:javax.servlet-api:3.0.1"
+   testCompileOnly "javax.servlet:javax.servlet-api:${servletApiVersion}"
 diff --git a/h2o-core/src/main/java/hex/ElasticsearchTokenizer.java b/h2o-core/src/main/java/hex/ElasticsearchTokenizer.java
 new file mode 100644
 index 0000000000..5e25a77285

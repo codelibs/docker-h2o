@@ -1,4 +1,4 @@
-FROM adoptopenjdk:11-jdk-hotspot as builder
+FROM adoptopenjdk:11-jdk-hotspot-bionic as builder
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -37,7 +37,7 @@ RUN cd h2o-3 && \
     echo "BUILD_NUMBER=$BUILD_NUMBER" > gradle/buildnumber.properties && \
     ./gradlew build -x test
 
-FROM adoptopenjdk:11-jdk-hotspot
+FROM adoptopenjdk:11-jdk-hotspot-bionic
 
 LABEL maintainer "CodeLibs, Inc."
 
