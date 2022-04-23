@@ -23,9 +23,9 @@ ARG BUILD_NUMBER=0
 
 RUN git clone https://github.com/h2oai/h2o-3.git -b $GIT_BRANCH && \
     ln -s /usr/bin/python3 /usr/bin/python && \
-    pip3 install --upgrade pip && \
-    sed -i "/cython==0.27.*/d" h2o-3/h2o-py/test-requirements.txt && \
-    pip3 install -r h2o-3/h2o-py/test-requirements.txt && \
+    pip3 install --upgrade pip
+ADD test-requirements.txt h2o-3/h2o-py/test-requirements.txt
+RUN pip3 install -r h2o-3/h2o-py/test-requirements.txt && \
     useradd -m -u 1000 docker && chown -R docker /build
 
 USER docker
@@ -51,3 +51,4 @@ EXPOSE 54321
 EXPOSE 54322
 
 CMD ["/bin/bash", "/opt/h2o/bin/start-h2o-docker.sh"]
+
