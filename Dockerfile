@@ -1,4 +1,4 @@
-FROM adoptopenjdk:11-jdk-hotspot-focal as builder
+FROM eclipse-temurin:11-jdk-focal as builder
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -30,13 +30,20 @@ RUN pip3 install -r h2o-3/h2o-py/test-requirements.txt && \
 
 USER docker
 
-ADD h2o.patch .
-RUN cd h2o-3 && \
-    git apply ../h2o.patch && \
-    echo "BUILD_NUMBER=$BUILD_NUMBER" > gradle/buildnumber.properties && \
-    ./gradlew build -x test --debug --stacktrace
+ENV R_LIBS_USER=/build/h2o-3/Rlibrary
 
-FROM adoptopenjdk:11-jdk-hotspot-focal
+ADD h2o.patch .
+WORKDIR /build/h2o-3
+RUN git apply ../h2o.patch && \
+    echo "BUILD_NUMBER=$BUILD_NUMBER" > gradle/buildnumber.properties && \
+    mkdir -p ${R_LIBS_USER} && \
+    ./gradlew clean
+RUN ./gradlew --parallel build \
+      -x test -x :h2o-r:buildPackageDocumentation \
+      --info --stacktrace
+
+
+FROM eclipse-temurin:11-focal
 
 LABEL maintainer "CodeLibs, Inc."
 

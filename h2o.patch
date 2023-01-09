@@ -1,5 +1,5 @@
 diff --git a/h2o-core/build.gradle b/h2o-core/build.gradle
-index 992c9654fe..62795094d7 100644
+index 35fe0f9889..3793a6a79c 100644
 --- a/h2o-core/build.gradle
 +++ b/h2o-core/build.gradle
 @@ -32,6 +32,8 @@ dependencies {
