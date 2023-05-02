@@ -1,12 +1,12 @@
 diff --git a/h2o-core/build.gradle b/h2o-core/build.gradle
-index 35fe0f9889..3793a6a79c 100644
+index 35fe0f9889..b5f972fddf 100644
 --- a/h2o-core/build.gradle
 +++ b/h2o-core/build.gradle
 @@ -32,6 +32,8 @@ dependencies {
      exclude group: 'org.mapdb', module: 'mapdb'
    }
  
-+  api 'org.codelibs:curl4j:1.2.4'
++  api 'org.codelibs:curl4j:1.2.8'
 +
    testImplementation project(':h2o-test-support')
    testRuntimeOnly project(":${defaultWebserverModule}")
